@@ -2,6 +2,8 @@
 
 Project game
 
+All libraries are in "My First Game.rar".
+
 Game: Avoid Square Homing Bullets.
 
 All you need to do is control the blue square to dodge all red squares, which go horizontally or vertically to your current position from ALL 4 edges of the window.
