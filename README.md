@@ -1,19 +1,19 @@
-# My First Game: Avoid Square Homing Bullets
+# My First Game: Dodge The Bullets
 
-Tất cả thư viện đều nằm trong "My First Game.rar".
+Link download các file include, libraries, ...
 
-Nội dung game: Người chơi sẽ điều khiển hình vuông màu xanh theo các hướng để tránh va chạm với các hình vuông đỏ 
-(địch/chướng ngại/viên đạn/whatever...)
+https://www.libsdl.org/release/SDL2-devel-2.0.12-mingw.tar.gz (i686-w64-mingw32)
+https://www.libsdl.org/projects/SDL_image/release/SDL2_image-devel-2.0.5-mingw.tar.gz
+https://www.libsdl.org/projects/SDL_ttf/release/SDL2_ttf-devel-2.0.15-mingw.tar.gz
+https://www.libsdl.org/projects/SDL_mixer/release/SDL2_mixer-devel-2.0.4-mingw.tar.gz
 
-Khi 1 hình vuông đỏ đi ra ngoài khỏi cửa sổ trò chơi, người chơi sẽ được nhận 1 điểm.
+File Debug bao gồm ảnh, âm nhạc và file .exe
 
-Ban đầu người chơi được chọn mức độ khó (từ 1 đến 8) và chế độ chơi 
-(giành 2000 điểm, 4000 điểm để thắng hoặc chơi đến khi nào thua).
+Nội dung game: Người chơi sẽ điều khiển chấm vàng theo các hướng để tránh va chạm với các chấm tròn màu đỏ (địch/chướng ngại/viên đạn/whatever...) bằng cách dùng phím mũi tên, hoặc các phím q,z,c,e trong 1 số cửa nhất định
 
-Các hình vuông đỏ sẽ không ngừng xuất hiện và đi thẳng vào vị trí của người chơi (hình vuông xanh)
+Sau khi chọn chế độ chơi (có 3 chế độ chơi) và độ khó (có 4 hoặc 8 độ khó, tùy chế độ) người chơi có thể chọn 1 trong 3 mục tiêu để hoàn thành (mục tiêu thứ 3 trong đó ko hẳn là mục tiêu, vì đó là chơi đến khi nào thua hoặc người chơi tự thoát ra ngoài :v)
 
-Ở mức độ dễ, các hình vuông đỏ sẽ đến từ 2 cạnh bên của cửa sổ trò chơi.
+Khi 1 chấm tròn đỏ đi ra ngoài khỏi cửa sổ trò chơi, người chơi sẽ được nhận 1-số-cố-định điểm (tùy ván chơi)
 
-Ở mức độ khó hơn, các hình vuông đỏ sẽ đến từ cả 4 cạnh của cửa sổ trò chơi.
+Khi mục tiêu được hoàn thành (hoặc người chơi để xảy ra va chạm) ngay lập tức game kết thúc, 1 thông báo hiện ra thông báo điểm số cuối cùng và cho người chơi 2 lựa chọn (chơi lại chính cửa đó hoặc thoát ra ngoài)
 
-Ấn "r" và <enter> để chơi tiếp khi lượt chơi trước kết thúc.
