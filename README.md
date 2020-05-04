@@ -7,7 +7,7 @@ https://www.libsdl.org/projects/SDL_image/release/SDL2_image-devel-2.0.5-mingw.t
 https://www.libsdl.org/projects/SDL_ttf/release/SDL2_ttf-devel-2.0.15-mingw.tar.gz
 https://www.libsdl.org/projects/SDL_mixer/release/SDL2_mixer-devel-2.0.4-mingw.tar.gz
 
-File Debug bao gồm ảnh, âm nhạc và file .exe
+File Debug bao gồm TTF, ảnh, âm nhạc và file .exe
 
 Nội dung game: Người chơi sẽ điều khiển chấm vàng theo các hướng để tránh va chạm với các chấm tròn màu đỏ (địch/chướng ngại/viên đạn/whatever...) bằng cách dùng phím mũi tên, hoặc các phím q,z,c,e trong 1 số cửa nhất định
 
