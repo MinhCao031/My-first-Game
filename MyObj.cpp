@@ -50,6 +50,29 @@ void PlayerBox::moveUp(short Ystep)
     else y = 0;
 }
 
+void PlayerBox::FollowCursor(SDL_Event e)
+{
+ /*
+    if (e.button.x <= Size/2) x = 0;
+    else if (e.button.x + Size/2 >= SCR_WIDTH) x = SCR_WIDTH - Size;
+    else x = e.button.x - Size/2;
+    if (e.button.y <= Size/2) y = 0;
+    else if (e.button.y + Size/2 >= SCR_HEIGHT) y = SCR_HEIGHT - Size;
+    else y = e.button.y - Size/2;
+ */
+    int X = e.button.x;
+    int Y = e.button.y;
+    if( X>0 && Y>0 && X < SCR_WIDTH && Y < SCR_HEIGHT )
+    {
+        if (X > Size/2 && X < SCR_WIDTH - Size/2) x = X - Size/2;
+        else if (X + Size/2 <= Size/2) x = 0;
+        else if (X >= SCR_WIDTH - Size/2) x = SCR_WIDTH - Size;
+        if (Y > Size/2 && Y < SCR_WIDTH - Size) y = Y - Size/2;
+        else if (Y + Size/2 <= Size/2) y = 0;
+        else if (Y >= SCR_HEIGHT - Size/2) y = SCR_HEIGHT - Size;
+    }
+}
+
 EnemyBullet::EnemyBullet()
 {
     Size = ENEMY_BOXSIDE;
@@ -186,7 +209,7 @@ void EnemyBullet::CircleSecondPos(PlayerBox P)
     if(Status == 4)
     {
         Status = 5;
-        DSpeed = 0.06;
+        DSpeed = 0.055;
         double Distance = sqrt( (P.x-x)*(P.x-x) + (P.y-y)*(P.y-y) );
         if (Distance == 0) {Status = 7; return;}
         DxSpeed = (P.x-x) * DSpeed / Distance ;
@@ -230,12 +253,14 @@ void EnemyBullet::RandomPos(int Score)
     {
         Status = 4;
         ID = 20 + rand()%4;
-        if(Score < 400) Speed = 1 + 0.1*(rand()%20); //          1~2.9
-            else if(Score < 800) Speed = 2 + 0.1*(rand()%20);//  2~3.9
-            else Speed = 3 + 0.1*(rand()%20); //                 3~4.9
-        if(Score < 400) Size = 64 + rand()%64; //               64~127
-            else if(Score < 800) Size = 80 + rand()%64; //      80~143
-            else Size = 96 + rand()%64; //                      96~159
+        if(Score < 400) Speed = 1 + 0.1*(rand()%21); //          1~3.0
+            else if(Score < 800)  Speed = 2 + 0.1*(rand()%16);// 2~3.5
+            else if(Score < 1200) Speed = 3 + 0.1*(rand()%11);// 3~4.0
+            else Speed = 4 + 0.1*(rand()%6); //                  4~4.5
+        if(Score < 400) Size = 60 + rand()%61; //               60~120
+            else if(Score < 800)  Size = 80 + rand()%51; //     80~130
+            else if(Score < 1200) Size = 100 + rand()%41; //   100~140
+            else Size = 120 + rand()%31; //                    120~150
         switch(ID)
         {
             case 20:
