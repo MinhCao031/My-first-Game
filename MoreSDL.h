@@ -16,9 +16,9 @@ void initSDL(SDL_Window* &window, SDL_Renderer* &renderer, int screenWidth, int 
 
 void quitSDL(SDL_Window* window, SDL_Renderer* renderer);
 
-void LoadStat(SDL_Renderer *RENDERER, TTF_Font *font, char* Stat, SDL_Color fg);
+void LoadStat(SDL_Renderer *RENDERER, TTF_Font *font, char* Stat, SDL_Color fg, int AskText = 0);
 
-SDL_Texture* LoadImage(SDL_Renderer *RENDERER, std::string path, bool KeepBG, int red = 0, int green = 0, int blue = 0);
+SDL_Texture* loadImage(SDL_Renderer *RENDERER, std::string path, bool KeepBG, int red = 0, int green = 0, int blue = 0);
 
 bool Click(SDL_Event E, SDL_Rect Area);
 
@@ -30,10 +30,20 @@ void Goto(SDL_Renderer* renderer, SDL_Texture* where);
 
 void SetEnemy(int DIFF, int BulletKind, int& DeltaWait, int& Limit);
 
-void PlayerMove(PlayerBox& Player, SDL_Event e, int Mode);
+void PlayerMove(PlayerBox& Player, SDL_Event e, int Mode, int quest[]);
+
+void UpdateBestStat(int Score, int Wait, int &HighScore, int &BestTime);
+
+char* CurrentMode(int MODE, int DIFFICULT);
 
 char* GetCurrentStat(int Score, int Wait);
 
+char* GetCurrentBestStat(int Score, int Wait);
+
 char* GetScore(int DIFF, int MODE, int COLL, int SCORE);
+
+char* GetQuestStatus(int QuestNum);
+
+char* GetQuest(int QuestNum);
 
 #endif // MORESDL_H_INCLUDED

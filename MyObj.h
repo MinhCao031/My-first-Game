@@ -16,6 +16,8 @@ struct PlayerBox{
     void moveLeft(short Xstep);
     void moveDown(short Ystep);
     void moveUp(short Ystep);
+// Use Mouse
+    void FollowCursor(SDL_Event Location);
 };
 
 class EnemyBullet{
