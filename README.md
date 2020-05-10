@@ -9,6 +9,8 @@ https://www.libsdl.org/projects/SDL_mixer/release/SDL2_mixer-devel-2.0.4-mingw.t
 
 File Debug bao gồm TTF, ảnh, âm nhạc và file .exe
 
+Nếu cần có thể vào Display Settings -> Scale and layout -> 100% để có thể chơi được và nhìn thấy toàn bộ màn hình.
+
 Nội dung game: Người chơi sẽ điều khiển chấm vàng theo các hướng để tránh va chạm với các chấm tròn màu đỏ (địch/chướng ngại/viên đạn/whatever...) bằng cách 
 - Dùng phím mũi tên  (trái, phải, lên, xuống)
 - Dùng Phím q,z,c,e trong 1 số cửa nhất định (4 hướng chéo)
